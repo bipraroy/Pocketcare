@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 import com.bipra.pocketcare.R;
 import com.bipra.pocketcare.adapter.ViewPagerAdapter;
@@ -18,15 +19,18 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        //initialize();
+
+        initialize();
     }
 
     private void initialize() {
-
-        //tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        //viewPager = (ViewPager)findViewById(R.id.viewpager);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        viewPager = (ViewPager)findViewById(R.id.viewpager);
         setUpViewPager();
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 
     private void setUpViewPager() {
